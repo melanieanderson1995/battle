@@ -1,6 +1,11 @@
-<% if @name %>
-<h1>My name is <%= @name %></h1>
-<% end %>
-<div style='border: 3px dashed red'>
-  <img src='http://bit.ly/1eze8aE'>
-</div>
+<h1>Battle for glory!</h1>
+<h2>Enter your name to play</h2>
+<form action="/names" method="post">
+  <label for="player_1_name">
+    Player 1 name
+  <input type="text" name="player_1_name">
+  <label for="player_2_name">
+    Player 2 name
+  <input type="text" name="player_2_name">
+  <input type="submit" name="Submit">
+</form>
