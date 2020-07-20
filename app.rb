@@ -14,5 +14,6 @@ get "/fruit" do
 end
 
 get "/cat" do
+  @name = ["Raul", "Winston", "Kilburn"].sample
   erb(:index)
 end
