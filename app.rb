@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -12,21 +14,46 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
-    session[:player_2_name] = params[:player_2_name]
-    redirect '/play'
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    $game = Game.new(player_1, player_2)
+    redirect('/play')
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    @player_2_name = session[:player_2_name]
+    @game = $game
     erb :play
   end
 
-  get '/attack' do
-    @player_1_name = session[:player_1_name]
-    @player_2_name = session[:player_2_name]
+  post '/attack' do
+    #Attack.run($game.opponent_of($game.current_turn))
+    if $game.game_over?
+      redirect "/game_over"
+    else
+      redirect "/attack"
+    end
+  end
+
+  get "/attack" do
+    @game = $game
+    @game.attack(@game.opponent_of(@game.current_turn))
     erb :attack
+  end
+
+  post "/paralyze" do
+    @game = $game
+    @game.paralyze(@game.opponent_of(@game.current_turn))
+    erb :paralyze
+  end
+
+  get '/switch_turn' do
+    $game.switch_turn
+    redirect('/play')
+  end
+
+  get "/game_over" do
+    @game = $game
+    erb :game_over
   end
 
   run! if app_file == $0

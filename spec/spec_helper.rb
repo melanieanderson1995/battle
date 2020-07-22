@@ -25,6 +25,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'features/web_helpers'
+require 'shotgun'
 
 # tell Capybara about our app class
 Capybara.app = Battle
