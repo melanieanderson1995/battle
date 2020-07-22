@@ -1,1 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=/style.css />
+</head>
+
+<body>
 <h3> <%= @game.loser.name %> loses! They scurry off into the night... </h3>
+<form action="/index" method="get">
+  <input type="submit" name="restart" value="Play again?">
+</form>
+<div>
+<img src='./images/night_alley.jpg' width=90%>
+</div>
+</body>

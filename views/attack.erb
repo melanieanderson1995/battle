@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel=”stylesheet” type=”text/css” href=”/style.css” />
+<link rel=stylesheet type=text/css href=/style.css />
 </head>
 
-
+<body>
 <% if @game.current_turn == @game.player_1 %>
 <h1> <%= @game.player_1.name %> attacked <%= @game.player_2.name %>! Ouch! </h1>
 <% else %>
@@ -14,3 +14,8 @@
 <form action="/switch_turn" method:"post">
   <input type="submit" name="OK" value="*purr*">
 </form>
+
+<img src='./images/scratch.jpg' class="action_img">
+
+</body>
+</html>

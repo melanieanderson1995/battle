@@ -1,12 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=/style.css />
+</head>
+<body>
+<div>
 <h1> <%= @game.player_1.name %> vs <%= @game.player_2.name %>, CAT FIGHT! </h1>
-<h2> <%= @game.current_turn.name %>'s turn </h2>
-<h3> <%= @game.player_1.name %>: <%= @game.player_1.hit_points %> HP </h3>
-<h3> <%= @game.player_2.name %>: <%= @game.player_2.hit_points %> HP </h3>
+</div>
+<div>
+  <h2> <%= @game.current_turn.name %>'s turn </h2>
+  <form action="/attack" method="post">
+    <input type="submit" value="Scratch">
+    <input type="submit" value="Puff up">
+    <input type="submit" value="Give catnip">
+  </form>
+  <img src='./images/left_cat.jpg' class="player_2_img">
+  <h3 class="player_1"> <%= @game.player_1.name %>: <%= @game.player_1.hit_points %> HP </h3>
+  <img src='./images/vs_img.png' class="vs">
+  <img src='./images/right_cat.jpg' class="player_1_img">
+  <h3 class="player_2"> <%= @game.player_2.name %>: <%= @game.player_2.hit_points %> HP </h3>
+</div>
 
-<form action="/attack" method="post">
-  <input type="submit" value="Scratch">
-</form>
 
-<form action="/paralyze" method="post">
-  <input type="submit" value="Puff up">
-</form>
+</body>

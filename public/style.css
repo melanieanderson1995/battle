@@ -1,4 +1,54 @@
-h1 {
+body {
   text-align: center;
-  color: blue;
+  color: white;
+  font-family: Helvetica;
+  background-color: black;
+}
+h1 {
+  font: Helvetica;
+}
+img {
+  align-items: center;
+  width: 900px;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+  box-shadow: 0 0 8px 8px black inset;
+  padding-top: 20px;
+}
+
+h3.player_1 {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+h3.player_2 {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+}
+
+.player_2_img {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  width: 30%;
+}
+
+.player_1_img {
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+  width: 30%;
+}
+
+.action_img {
+  align-items: center;
+  width: 60%;
+}
+
+.vs {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 10%;
 }
