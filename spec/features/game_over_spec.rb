@@ -3,7 +3,7 @@ feature "allows game over" do
     before do
       sign_in_and_play
       attack_and_confirm
-      #allow(Kernel).to receive(:rand).and_return(100)
+      allow(Kernel).to receive(:rand).and_return(100)
     end
 
     scenario "Player 2 loses" do

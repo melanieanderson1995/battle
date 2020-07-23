@@ -9,8 +9,8 @@ class Player
     @hit_points = hit_points
   end
 
-  def lose_points
-    @hit_points -= 10
+  def lose_points(damage = rand(10))
+    @hit_points -= damage
   end
 
   def lose_turn

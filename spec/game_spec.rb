@@ -65,7 +65,7 @@ describe Game do
 
   describe "#loser" do
     it "returns a player on less than 0 HP" do
-      expect(finished_game.loser).to eq dead_player
+      expect(finished_game.loser).to eq loser
     end
   end
 end

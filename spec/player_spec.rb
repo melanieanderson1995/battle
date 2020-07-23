@@ -15,8 +15,10 @@ describe Player do
       expect(lanie.hit_points).to eq Player::DEFAULT_HP
     end
 
-    it "lowers hit points" do
-      expect{ ada.lose_points }.to change { ada.hit_points }.by(-10)
+    it "lowers hit points randomly" do
+      srand(67809)
+      subject.lose_points
+      expect(subject.hit_points).to eq 48
     end
   end
 end

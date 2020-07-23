@@ -1,3 +1,5 @@
+require_relative "player"
+
 class Game
   attr_reader :current_turn, :players
 
@@ -31,23 +33,23 @@ class Game
   end
 
   def switch_turn
-    @current_turn = opponent_of(current_turn)
+    @current_turn = opponent_of
   end
 
   def game_over?
-    losing_players.any?
+    !!losing_player
   end
 
-  def opponent_of(player)
-    players_who_are_not(player).first
+  def opponent_of(player = @current_turn)
+    player == player_1 ? player_2 : player_1
   end
 
   def loser
-    losing_players.first
+    losing_player
   end
 
-  def players_who_are_not(the_player)
-    @players.select { |player| player != the_player }
+  def losing_player
+    @players.select { |player| player.hit_points <= 0 }.first
   end
 
   def losing_players
