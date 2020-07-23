@@ -14,3 +14,13 @@ def paralyze_and_confirm
   click_button "Puff up"
   click_button "OK"
 end
+
+def sleep_and_confirm
+  click_button "Cat nap"
+  click_button "OK"
+end
+
+def poison_and_confirm
+  click_button "Catnip"
+  click_button "OK"
+end
