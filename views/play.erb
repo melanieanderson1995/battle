@@ -11,8 +11,15 @@
   <h2> <%= @game.current_turn.name %>'s turn </h2>
   <form action="/attack" method="post">
     <input type="submit" value="Scratch">
+  </form>
+  <form action="/paralyze" method="post">
     <input type="submit" value="Puff up">
+  </form>
+  <form action="/poison" method="post">
     <input type="submit" value="Give catnip">
+  </form>
+  <form action="/sleep" method="post">
+    <input type="submit" value="Cat nap">
   </form>
   <img src='./images/left_cat.jpg' class="player_2_img">
   <h3 class="player_1"> <%= @game.player_1.name %>: <%= @game.player_1.hit_points %> HP </h3>

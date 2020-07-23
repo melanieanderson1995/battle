@@ -3,16 +3,19 @@
 <head>
 <link rel=stylesheet type=text/css href=/style.css />
 </head>
+
 <body>
 <% if @game.current_turn == @game.player_1 %>
-<h1> <%= @game.player_1.name %> paralyzed <%= @game.player_2.name %> with fear, they can't move! Yikes! </h1>
+<h1> <%= @game.player_1.name %> scared <%= @game.player_2.name %>, they can't move! Yikes! </h1>
 <% else %>
-<h1> <%= @game.player_2.name %> paralyzed <%= @game.player_1.name %> with fear, they can't move! Yikes! </h1>
+<h1> <%= @game.player_2.name %> scared <%= @game.player_1.name %>, they can't move! Yikes! </h1>
 <% end %>
 
 <form action="/switch_turn" method:"post">
   <input type="submit" name="OK" value="*purr*">
 </form>
+
+<img src='' class="action_img">
 
 </body>
 </html>

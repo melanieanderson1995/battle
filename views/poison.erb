@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=/style.css />
+</head>
+
+<body>
+<% if @game.current_turn == @game.player_1 %>
+<h1> <%= @game.player_1.name %> gave <%= @game.player_2.name %> catnip, they take some damage! </h1>
+<% else %>
+<h1> <%= @game.player_2.name %> gave <%= @game.player_1.name %> catnip, they take some damage! </h1>
+<% end %>
+
+<form action="/switch_turn" method:"post">
+  <input type="submit" name="OK" value="*purr*">
+</form>
+
+<img src='./images/catnip.jpg' class="action_img">
+
+</body>
+</html>

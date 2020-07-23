@@ -46,6 +46,14 @@ class Battle < Sinatra::Base
     erb :paralyze
   end
 
+  post "/poison" do
+    erb :poison
+  end
+
+  post "/sleep" do
+    erb :sleep
+  end
+
   get '/switch_turn' do
     $game.switch_turn
     redirect('/play')
